@@ -37,6 +37,17 @@ namespace ARveCore
             }
         }
 
+        private void FillProgressBar()
+        {
+            progressBar1.Visible = true;
+            for (int i = 0; i < 100; i++)
+            {
+                progressBar1.Value = i;
+                progressBar1.Update();
+                Thread.Sleep(25);
+            }
+        }
+
         [DllImport("kernel32.dll", SetLastError = true)]
         [return: MarshalAs(UnmanagedType.Bool)]
         private static extern bool AllocConsole();
@@ -49,7 +60,7 @@ namespace ARveCore
         {
             if (AllocConsole())
             {
-                System.Console.Title = "Trainer log";
+                Console.Title = "Trainer log";
                 if (Trainer.Start())
                 {
                     ActivePanel.Hide();
@@ -65,11 +76,43 @@ namespace ARveCore
                 UnlimitedRadio.Checked = false;
                 UnlimitedNotebook.Checked = false;
                 UnlimitedVideoCamera.Checked = false;
+                UnlimitedEmpDetector.Checked = false;
+                UnlimitedUvFlashlight.Checked = false;
+                UnlimitedFlashlight.Checked = false;
+                UnlimitedCandle.Checked = false;
+                UnlimitedCrucifixion.Checked = false;
+                UnlimitedNeonStick.Checked = false;
+                UnlimitedHeadMountCamera.Checked = false;
+                UnlimitedMotionSensor.Checked = false;
+                UnlimitedDirectionalMicrophone.Checked = false;
+                UnlimitedSalt.Checked = false;
+                UnlimitedSedative.Checked = false;
+                UnlimitedIncense.Checked = false;
+                UnlimitedSoundSensor.Checked = false;
+                UnlimitedPowerfulFlashlight.Checked = false;
+                UnlimitedThermometer.Checked = false;
+                UnlimitedTripod.Checked = false;
             }
             UnlimitedCamera.Enabled = conditionAllFunc;
             UnlimitedRadio.Enabled = conditionAllFunc;
             UnlimitedNotebook.Enabled = conditionAllFunc;
             UnlimitedVideoCamera.Enabled = conditionAllFunc;
+            UnlimitedEmpDetector.Enabled = conditionAllFunc;
+            UnlimitedUvFlashlight.Enabled = conditionAllFunc;
+            UnlimitedFlashlight.Enabled = conditionAllFunc;
+            UnlimitedCandle.Enabled = conditionAllFunc;
+            UnlimitedCrucifixion.Enabled = conditionAllFunc;
+            UnlimitedNeonStick.Enabled = conditionAllFunc;
+            UnlimitedHeadMountCamera.Enabled = conditionAllFunc;
+            UnlimitedMotionSensor.Enabled = conditionAllFunc;
+            UnlimitedDirectionalMicrophone.Enabled = conditionAllFunc;
+            UnlimitedSalt.Enabled = conditionAllFunc;
+            UnlimitedSedative.Enabled = conditionAllFunc;
+            UnlimitedIncense.Enabled = conditionAllFunc;
+            UnlimitedSoundSensor.Enabled = conditionAllFunc;
+            UnlimitedPowerfulFlashlight.Enabled = conditionAllFunc;
+            UnlimitedThermometer.Enabled = conditionAllFunc;
+            UnlimitedTripod.Enabled = conditionAllFunc;
         }
     }
 }

@@ -14,29 +14,30 @@ namespace ARveCore
 {
     partial class Offsets
     {      
-        public static void LoadOffsets(Mem memoryValue)
+        public static void LoadOffsets(Mem memory)
         {
-            BaseItem = memoryValue.ReadBytes(BaseItemAdress, 4);
-            Camera = memoryValue.ReadInt(CameraAdress);
-            Radio = memoryValue.ReadInt(RadioAdress);
-            Notebook = memoryValue.ReadInt(NotebookAdress);
-            VideoCamera = memoryValue.ReadInt(VideoCameraAdress);
-            EmpDetector = memoryValue.ReadInt(EmpDetectorAdress);
-            UvFlashlight = memoryValue.ReadInt(UvFlashlightAdress);
-            Flashlight = memoryValue.ReadInt(FlashlightAdress);
-            Candle = memoryValue.ReadInt(CandleAdress);
-            Crucifixion = memoryValue.ReadInt(CrucifixionAdress);
-            NeonStick = memoryValue.ReadInt(NeonStickAdress);
-            HeadMountCamera = memoryValue.ReadInt(HeadMountCameraAdress);
-            MotionSensor = memoryValue.ReadInt(MotionSensorAdress);
-            DirectionalMicrophone = memoryValue.ReadInt(DirectionalMicrophoneAdress);
-            Salt = memoryValue.ReadInt(SaltAdress);
-            Sedative = memoryValue.ReadInt(SedativeAdress);
-            Incense = memoryValue.ReadInt(IncenseAdress);
-            SoundSensor = memoryValue.ReadInt(SoundSensorAdress);
-            PowerfulFlashlight = memoryValue.ReadInt(PowerfulFlashlightAdress);
-            Thermometer = memoryValue.ReadInt(ThermometerAdress);
-            Tripod = memoryValue.ReadInt(TripodAdress);
+            BaseItem = memory.ReadBytes(BaseItemAddress, 4);
+            SelectedItem = memory.ReadInt(SelectedItemAddress);
+            Camera = memory.ReadInt(CameraAddress);
+            Radio = memory.ReadInt(RadioAddress);
+            Notebook = memory.ReadInt(NotebookAddress);
+            VideoCamera = memory.ReadInt(VideoCameraAddress);
+            EmpDetector = memory.ReadInt(EmpDetectorAddress);
+            UvFlashlight = memory.ReadInt(UvFlashlightAddress);
+            Flashlight = memory.ReadInt(FlashlightAddress);
+            Candle = memory.ReadInt(CandleAddress);
+            Crucifixion = memory.ReadInt(CrucifixionAddress);
+            NeonStick = memory.ReadInt(NeonStickAddress);
+            HeadMountCamera = memory.ReadInt(HeadMountCameraAddress);
+            MotionSensor = memory.ReadInt(MotionSensorAddress);
+            DirectionalMicrophone = memory.ReadInt(DirectionalMicrophoneAddress);
+            Salt = memory.ReadInt(SaltAddress);
+            Sedative = memory.ReadInt(SedativeAddress);
+            Incense = memory.ReadInt(IncenseAddress);
+            SoundSensor = memory.ReadInt(SoundSensorAddress);
+            PowerfulFlashlight = memory.ReadInt(PowerfulFlashlightAddress);
+            Thermometer = memory.ReadInt(ThermometerAddress);
+            Tripod = memory.ReadInt(TripodAddress);
         }
 
         public static bool CheckBaseItemOffset()
@@ -46,10 +47,79 @@ namespace ARveCore
             else
                 return true;
         }
-
+        public static bool CheckSelectedItemOffset()
+        {
+            if (SelectedItem == 0)
+                return false;
+            else
+                return true;
+        }
         public static bool CheckCameraOffset()
         {
             if (Camera == 0)
+                return false;
+            else
+                return true;
+        }
+        public static bool CheckRadioOffset()
+        {
+            if (Radio == 0)
+                return false;
+            else
+                return true;
+        }
+        public static bool CheckNotebookOffset()
+        {
+            if (Notebook == 0)
+                return false;
+            else
+                return true;
+        }
+        public static bool CheckVideoCameraOffset()
+        {
+            if (VideoCamera == 0)
+                return false;
+            else
+                return true;
+        }
+        public static bool CheckEmpDetectorOffset()
+        {
+            if (EmpDetector == 0)
+                return false;
+            else
+                return true;
+        }
+        public static bool CheckUvFlashlightOffset()
+        {
+            if (UvFlashlight == 0)
+                return false;
+            else
+                return true;
+        }
+        public static bool CheckFlashlightOffset()
+        {
+            if (Flashlight == 0)
+                return false;
+            else
+                return true;
+        }
+        public static bool CheckCandleOffset()
+        {
+            if (Candle == 0)
+                return false;
+            else
+                return true;
+        }
+        public static bool CheckCrucifixionOffset()
+        {
+            if (Crucifixion == 0)
+                return false;
+            else
+                return true;
+        }
+        public static bool CheckNeonStickOffset()
+        {
+            if (NeonStick == 0)
                 return false;
             else
                 return true;
