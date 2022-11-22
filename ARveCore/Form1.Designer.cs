@@ -30,11 +30,17 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TrainerForm));
             this.MainPanel = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.ActivePanel = new System.Windows.Forms.Panel();
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.StartButton = new System.Windows.Forms.Button();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.SelectedItemCounter = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.UnlimitedSelectedItem = new System.Windows.Forms.CheckBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.UnlimitedBaseItems = new System.Windows.Forms.CheckBox();
             this.UnlimitedDirectionalMicrophone = new System.Windows.Forms.CheckBox();
             this.UnlimitedCandle = new System.Windows.Forms.CheckBox();
             this.UnlimitedTripod = new System.Windows.Forms.CheckBox();
@@ -55,19 +61,12 @@
             this.UnlimitedUvFlashlight = new System.Windows.Forms.CheckBox();
             this.UnlimitedVideoCamera = new System.Windows.Forms.CheckBox();
             this.UnlimitedEmpDetector = new System.Windows.Forms.CheckBox();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.SelectedItemCounter = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.UnlimitedSelectedItem = new System.Windows.Forms.CheckBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.UnlimitedBaseItems = new System.Windows.Forms.CheckBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.MainPanel.SuspendLayout();
-            this.panel2.SuspendLayout();
             this.ActivePanel.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
             this.SuspendLayout();
@@ -84,26 +83,13 @@
             this.MainPanel.Size = new System.Drawing.Size(582, 398);
             this.MainPanel.TabIndex = 5;
             // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.Transparent;
-            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel2.Controls.Add(this.ActivePanel);
-            this.panel2.Controls.Add(this.panel4);
-            this.panel2.Controls.Add(this.panel3);
-            this.panel2.Controls.Add(this.label3);
-            this.panel2.Location = new System.Drawing.Point(22, 88);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(418, 298);
-            this.panel2.TabIndex = 7;
-            // 
             // ActivePanel
             // 
             this.ActivePanel.Controls.Add(this.progressBar1);
             this.ActivePanel.Controls.Add(this.StartButton);
             this.ActivePanel.Location = new System.Drawing.Point(3, 3);
             this.ActivePanel.Name = "ActivePanel";
-            this.ActivePanel.Size = new System.Drawing.Size(410, 290);
+            this.ActivePanel.Size = new System.Drawing.Size(410, 284);
             this.ActivePanel.TabIndex = 1;
             // 
             // progressBar1
@@ -131,6 +117,19 @@
             this.StartButton.UseVisualStyleBackColor = false;
             this.StartButton.Click += new System.EventHandler(this.StartButton_Click);
             // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.Transparent;
+            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Controls.Add(this.ActivePanel);
+            this.panel2.Controls.Add(this.panel3);
+            this.panel2.Controls.Add(this.panel4);
+            this.panel2.Controls.Add(this.label3);
+            this.panel2.Location = new System.Drawing.Point(22, 94);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(418, 292);
+            this.panel2.TabIndex = 7;
+            // 
             // panel4
             // 
             this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -154,10 +153,77 @@
             this.panel4.Controls.Add(this.UnlimitedUvFlashlight);
             this.panel4.Controls.Add(this.UnlimitedVideoCamera);
             this.panel4.Controls.Add(this.UnlimitedEmpDetector);
-            this.panel4.Location = new System.Drawing.Point(3, 43);
+            this.panel4.Location = new System.Drawing.Point(3, 41);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(212, 250);
+            this.panel4.Size = new System.Drawing.Size(214, 246);
             this.panel4.TabIndex = 18;
+            // 
+            // panel3
+            // 
+            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel3.Controls.Add(this.SelectedItemCounter);
+            this.panel3.Controls.Add(this.label6);
+            this.panel3.Controls.Add(this.UnlimitedSelectedItem);
+            this.panel3.Controls.Add(this.label4);
+            this.panel3.Controls.Add(this.UnlimitedBaseItems);
+            this.panel3.Location = new System.Drawing.Point(221, 41);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(192, 170);
+            this.panel3.TabIndex = 13;
+            // 
+            // SelectedItemCounter
+            // 
+            this.SelectedItemCounter.AutoSize = true;
+            this.SelectedItemCounter.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.SelectedItemCounter.Location = new System.Drawing.Point(149, 86);
+            this.SelectedItemCounter.Name = "SelectedItemCounter";
+            this.SelectedItemCounter.Size = new System.Drawing.Size(25, 13);
+            this.SelectedItemCounter.TabIndex = 17;
+            this.SelectedItemCounter.Text = "Null";
+            // 
+            // label6
+            // 
+            this.label6.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label6.Location = new System.Drawing.Point(10, 105);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(164, 56);
+            this.label6.TabIndex = 16;
+            this.label6.Text = "*Before turning on, click on the desired item in the store, then turn on the func" +
+    "tion,   the item will become unlimited.";
+            // 
+            // UnlimitedSelectedItem
+            // 
+            this.UnlimitedSelectedItem.AutoSize = true;
+            this.UnlimitedSelectedItem.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.UnlimitedSelectedItem.Location = new System.Drawing.Point(10, 85);
+            this.UnlimitedSelectedItem.Name = "UnlimitedSelectedItem";
+            this.UnlimitedSelectedItem.Size = new System.Drawing.Size(149, 17);
+            this.UnlimitedSelectedItem.TabIndex = 15;
+            this.UnlimitedSelectedItem.Text = "Unlimited selected item  -  ";
+            this.UnlimitedSelectedItem.UseVisualStyleBackColor = true;
+            this.UnlimitedSelectedItem.CheckedChanged += new System.EventHandler(this.UnlimitedSelectedItem_CheckedChanged);
+            // 
+            // label4
+            // 
+            this.label4.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label4.Location = new System.Drawing.Point(10, 32);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(156, 50);
+            this.label4.TabIndex = 13;
+            this.label4.Text = "*This function replaces 4 bytes with \"nope (4x90)\" at the item\'s static base addr" +
+    "ess";
+            // 
+            // UnlimitedBaseItems
+            // 
+            this.UnlimitedBaseItems.AutoSize = true;
+            this.UnlimitedBaseItems.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.UnlimitedBaseItems.Location = new System.Drawing.Point(10, 12);
+            this.UnlimitedBaseItems.Name = "UnlimitedBaseItems";
+            this.UnlimitedBaseItems.Size = new System.Drawing.Size(112, 17);
+            this.UnlimitedBaseItems.TabIndex = 12;
+            this.UnlimitedBaseItems.Text = "Unlimited all items ";
+            this.UnlimitedBaseItems.UseVisualStyleBackColor = true;
+            this.UnlimitedBaseItems.CheckedChanged += new System.EventHandler(this.UnlimitedBaseItems_CheckedChanged);
             // 
             // UnlimitedDirectionalMicrophone
             // 
@@ -422,90 +488,11 @@
             this.UnlimitedEmpDetector.UseVisualStyleBackColor = true;
             this.UnlimitedEmpDetector.CheckedChanged += new System.EventHandler(this.UnlimitedEmpDetector_CheckedChanged);
             // 
-            // panel3
-            // 
-            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel3.Controls.Add(this.SelectedItemCounter);
-            this.panel3.Controls.Add(this.label6);
-            this.panel3.Controls.Add(this.UnlimitedSelectedItem);
-            this.panel3.Controls.Add(this.label5);
-            this.panel3.Controls.Add(this.label4);
-            this.panel3.Controls.Add(this.UnlimitedBaseItems);
-            this.panel3.Location = new System.Drawing.Point(221, 43);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(192, 193);
-            this.panel3.TabIndex = 13;
-            // 
-            // SelectedItemCounter
-            // 
-            this.SelectedItemCounter.AutoSize = true;
-            this.SelectedItemCounter.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.SelectedItemCounter.Location = new System.Drawing.Point(144, 103);
-            this.SelectedItemCounter.Name = "SelectedItemCounter";
-            this.SelectedItemCounter.Size = new System.Drawing.Size(25, 13);
-            this.SelectedItemCounter.TabIndex = 17;
-            this.SelectedItemCounter.Text = "Null";
-            // 
-            // label6
-            // 
-            this.label6.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label6.Location = new System.Drawing.Point(7, 122);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(172, 57);
-            this.label6.TabIndex = 16;
-            this.label6.Text = "*Before turning on, click on the desired item in the store, then turn on the func" +
-    "tion, the item will become unlimited.";
-            // 
-            // UnlimitedSelectedItem
-            // 
-            this.UnlimitedSelectedItem.AutoSize = true;
-            this.UnlimitedSelectedItem.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.UnlimitedSelectedItem.Location = new System.Drawing.Point(10, 102);
-            this.UnlimitedSelectedItem.Name = "UnlimitedSelectedItem";
-            this.UnlimitedSelectedItem.Size = new System.Drawing.Size(146, 17);
-            this.UnlimitedSelectedItem.TabIndex = 15;
-            this.UnlimitedSelectedItem.Text = "Unlimited selected item -  ";
-            this.UnlimitedSelectedItem.UseVisualStyleBackColor = true;
-            this.UnlimitedSelectedItem.CheckedChanged += new System.EventHandler(this.UnlimitedSelectedItem_CheckedChanged);
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label5.ForeColor = System.Drawing.Color.Red;
-            this.label5.Location = new System.Drawing.Point(106, 11);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(81, 13);
-            this.label5.TabIndex = 14;
-            this.label5.Text = "*Not fully tested";
-            // 
-            // label4
-            // 
-            this.label4.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label4.Location = new System.Drawing.Point(7, 44);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(172, 41);
-            this.label4.TabIndex = 13;
-            this.label4.Text = "*This function replaces 4 bytes with \"nope (4x90)\" at the item\'s static base addr" +
-    "ess";
-            // 
-            // UnlimitedBaseItems
-            // 
-            this.UnlimitedBaseItems.AutoSize = true;
-            this.UnlimitedBaseItems.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.UnlimitedBaseItems.Location = new System.Drawing.Point(10, 24);
-            this.UnlimitedBaseItems.Name = "UnlimitedBaseItems";
-            this.UnlimitedBaseItems.Size = new System.Drawing.Size(112, 17);
-            this.UnlimitedBaseItems.TabIndex = 12;
-            this.UnlimitedBaseItems.Text = "Unlimited all items ";
-            this.UnlimitedBaseItems.UseVisualStyleBackColor = true;
-            this.UnlimitedBaseItems.CheckedChanged += new System.EventHandler(this.UnlimitedBaseItems_CheckedChanged);
-            // 
             // label3
             // 
-            this.label3.Font = new System.Drawing.Font("NSimSun", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("NSimSun", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label3.Location = new System.Drawing.Point(51, 13);
+            this.label3.Location = new System.Drawing.Point(52, 10);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(325, 27);
             this.label3.TabIndex = 8;
@@ -518,7 +505,7 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Ink Free", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label2.Location = new System.Drawing.Point(351, 69);
+            this.label2.Location = new System.Drawing.Point(352, 69);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(48, 16);
             this.label2.TabIndex = 6;
@@ -551,8 +538,8 @@
             this.Load += new System.EventHandler(this.TrainerForm_Load);
             this.MainPanel.ResumeLayout(false);
             this.MainPanel.PerformLayout();
-            this.panel2.ResumeLayout(false);
             this.ActivePanel.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             this.panel3.ResumeLayout(false);
@@ -576,7 +563,6 @@
         private System.Windows.Forms.CheckBox UnlimitedNotebook;
         private System.Windows.Forms.CheckBox UnlimitedRadio;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.CheckBox UnlimitedFlashlight;
         private System.Windows.Forms.CheckBox UnlimitedUvFlashlight;

@@ -28,8 +28,10 @@ namespace ARveCore
          
         private void StartButton_Click(object sender, EventArgs e)
         {         
+            StartButton.Enabled = false;
             FillProgressBar();
             CheckMemory_DLL();
+            ChangeAllFunc(true, false);
             Task.Factory.StartNew(LogConsole);
         }
      
@@ -40,17 +42,16 @@ namespace ARveCore
             if (!Offsets.CheckBaseItemOffset())
             {
                 Trainer.Logger("BaseItem offset load error", "Func: UnlimitedBaseItems", ConsoleColor.Yellow, ConsoleColor.Red);
+                UnlimitedBaseItems.Checked = false;
                 UnlimitedBaseItems.Enabled = false;
             }
             else if (UnlimitedBaseItems.Checked)
             {
-                ChangeAllFunc(true, false);
                 Trainer.UnlimitedBaseItems();
             }
             else if (!UnlimitedBaseItems.Checked)
             {
                 Trainer.LimitedBaseItems();
-                ChangeAllFunc(false, true);
             }
         }
 
@@ -60,8 +61,6 @@ namespace ARveCore
 
             if (UnlimitedSelectedItem.Checked)
             {
-                ChangeAllFunc(true, false);
-
                 Trainer.UnlimitedSelectedItem();
 
                 SelectedItemCounter.Text = Offsets.SelectedItem.ToString();
@@ -75,7 +74,6 @@ namespace ARveCore
             {
                 Trainer.LimitedSelectedItem();
                 SelectedItemCounter.Text = "Null";
-                ChangeAllFunc(false, true);
             }
         }
 
@@ -132,7 +130,7 @@ namespace ARveCore
             }
             else if (!UnlimitedNotebook.Checked)
             {
-                Trainer.UnlimitedNotebook();
+                Trainer.LimitedNotebook();
             }
         }
 

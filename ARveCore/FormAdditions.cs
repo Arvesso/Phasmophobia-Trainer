@@ -32,8 +32,8 @@ namespace ARveCore
             }
             catch
             {
+                MessageBox.Show("Process closed", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 Application.Exit();
-                Thread.Sleep(1000);
             }
         }
 
@@ -93,6 +93,7 @@ namespace ARveCore
                 UnlimitedThermometer.Checked = false;
                 UnlimitedTripod.Checked = false;
             }
+
             UnlimitedCamera.Enabled = conditionAllFunc;
             UnlimitedRadio.Enabled = conditionAllFunc;
             UnlimitedNotebook.Enabled = conditionAllFunc;
